@@ -5,6 +5,7 @@ import {
   AlertTriangle,
   ArrowLeftRight,
   ArrowRight,
+  RefreshCw,
   ClipboardCheck,
   KanbanSquare,
   LogIn,
@@ -143,7 +144,16 @@ function Dashboard() {
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
-            {quickActions.map((a) => (
+  <button
+    type="button"
+    onClick={() => window.location.reload()}
+    className="inline-flex items-center gap-2 rounded-xl bg-white px-3.5 py-2 text-sm font-semibold text-brand-700 transition hover:bg-white/90"
+    title="Reload dashboard"
+  >
+    <RefreshCw className="h-4 w-4" />
+    Refresh Dashboard
+  </button>
+  {quickActions.map((a) => (
               <Link
                 key={a.label}
                 to={a.to}
